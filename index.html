@@ -1,44 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/localbase/dist/localbase.dev.js"></script>
-
-
+    <script src="./app.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Localbase</h1>
-    
-</body>
-
-<script>
-    let db = new Localbase('db')
-
-    db.collection('users').add({
-        id: 1,
-        name: 'Bill',
-        age: 47
-    })
-
-    try {
-         //Valid Search
-        db.collection('users').doc({id:1}).get().then(users => {
-            console.log('Valid Search:');
-            console.log(users)
-        })
-
-        //Invalid Search
-        db.collection('users').doc({id:2}).get().then(users => {
-            console.log('Invalid Search');
-            console.log(users)
-        })
-        
-    } catch (error) {
-        console.log('Error Block');
-        console.log(error);
-    }
-   
-  </script>
+  </body>
 </html>
